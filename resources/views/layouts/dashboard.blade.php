@@ -8,7 +8,7 @@
     <title>Assan-Admin</title>
 
     <!--Bootstrap icons-->
-    <link href="assets/fonts/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/fonts/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
     <!--Google web fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!--Simplebar css-->
-    <link rel="stylesheet" href="assets/vendor/css/simplebar.min.css">
+    <link rel="stylesheet" href="/assets/vendor/css/simplebar.min.css">
 
     <!--Choices css-->
-    <link rel="stylesheet" href="assets/vendor/css/choices.min.css">
+    <link rel="stylesheet" href="/assets/vendor/css/choices.min.css">
 
 
     <!--Main style-->
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="/assets/css/style.min.css">
 </head>
 
 <body>
@@ -744,32 +744,10 @@
             </div>
 
             <!--//Page Toolbar//-->
-            <div class="toolbar px-3 px-lg-6 py-3">
-                <div class="position-relative container-fluid px-0">
-                    <div class="row align-items-center position-relative">
-                        <div class="col-md-8 mb-4 mb-md-0">
-                            <h3 class="mb-2">Datatables</h3>
 
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb mb-0">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active">Datatables</li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <div class="col-md-4 text-md-end">
-                            <a href="https://datatables.net/" target="_blank" class="text-body">More Examples
-                                <span class="material-symbols-rounded align-middle ms-1 fs-5">
-                        open_in_new
-                        </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!--//Page Toolbar End//-->
 
-           @yield('section')
+           @yield('content')
 
             <!--//Page-footer//-->
             <footer class="pb-3 pb-lg-5 px-3 px-lg-6">
@@ -788,7 +766,7 @@
 </div>
 
 <!--////////////Theme Core scripts Start/////////////////-->
-<script src="assets/js/theme.bundle.js"></script>
+<script src="/assets/js/theme.bundle.js"></script>
 
 <!--////////////Theme Core scripts End/////////////////-->
 
