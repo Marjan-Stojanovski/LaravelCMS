@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form class="form-control" method="post" action="{{route('users.store')}}">
+                <form method="post" action="{{route('users.store')}}">
                     @csrf
                     <h1>Create User</h1>
                     <div class="mb-3 row">

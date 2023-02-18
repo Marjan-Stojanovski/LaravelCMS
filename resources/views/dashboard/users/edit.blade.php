@@ -4,9 +4,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form class="form-control" method="post" action="{{route('users.store')}}">
+                <form class="form-control" method="post" action="{{route('users.update', $users->id)}}">
                     @csrf
-                    <h1>Create User</h1>
+                    @method('put')
+
+                    <h1>Modify User</h1>
                     <div class="mb-3 row">
                         <label for="name" class="col-sm-2 col-form-label">First Name</label>
                         <div class="col-sm-6">

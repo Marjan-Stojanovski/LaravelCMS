@@ -53,6 +53,22 @@ class UserController extends Controller
         return view('dashboard.users.edit')->with($data);
     }
 
+    public function update(Request $request, $id)
+    {
+        $user = User::FindorFail($id);
+
+        $user->fill($request->all())->save();
+
+        return redirect()->route('users.index');
+    }
+
+    public function destroy($id)
+    {
+        $user = User::FindorFail($id);
+        $user->delete();
+        return redirect()->route('users.index');
+    }
+
 
 
 }

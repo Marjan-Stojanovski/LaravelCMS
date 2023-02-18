@@ -75,39 +75,33 @@
                                 <i class="bi bi-three-dots"></i>
                                 <span>Main</span>
                             </li>
+
+                            <!--Sidebar first item-->
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link d-flex align-items-center text-truncate ">
+                                <a href="{{route('users.index')}}" class="nav-link d-flex align-items-center text-truncate btn btn-info">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
-                          sell
+                          productivity
                           </span>
                       </span>
-                                    <!--Sidebar nav text-->
-                                    <span class="sidebar-text">E-commerce</span>
+                                    <span class="sidebar-text">Users</span>
                                 </a>
                             </li>
+                            <!--Sidebar first item end-->
+
+                            <!--Sidebar second item-->
                             <li class="nav-item">
-                                <a href="index-analytics.html" class="nav-link d-flex align-items-center text-truncate ">
+                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-info">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
-                          monitoring
+                          inventory
                           </span>
                       </span>
-                                    <!--Sidebar nav text-->
-                                    <span class="sidebar-text">Analytics</span>
+                                    <span class="sidebar-text">Products</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate ">
-                      <span class="sidebar-icon">
-                        <span class="material-symbols-rounded">
-                          folder
-                          </span>
-                      </span>
-                                    <!--Sidebar nav text-->
-                                    <span class="sidebar-text">Management <span class="badge rounded-pill bg-success ms-3">New</span></span>
-                                </a>
-                            </li>
+                            <!--Sidebar second item end-->
+
 
                             <li class="nav-item">
                                 <a href="widgets.html"
@@ -120,94 +114,7 @@
                                     <span class="sidebar-text">Widgets <span class="badge rounded-pill bg-info ms-3">60+</span></span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a data-bs-toggle="collapse"
-                                   class="nav-link d-flex align-items-center text-truncate "
-                                   aria-expanded="false" href="#ui-pages">
-                      <span class="sidebar-icon">
-                        <span class="material-symbols-rounded">
-                          sticky_note_2
-                          </span>
-                      </span>
-                                    <!--Sidebar nav text-->
-                                    <span class="sidebar-text">Pages</span>
-                                </a>
-                                <ul id="ui-pages" class="sidebar-dropdown list-unstyled collapse datatabless_collapse">
-                                    <li class="sidebar-item">
-                                        <a href="#pages-account" data-bs-toggle="collapse" aria-expanded="false" class="sidebar-link @@account_active">
-                                            Account
-                                        </a>
-                                        <ul id="pages-account" class="sidebar-dropdown list-unstyled collapse sd-second-level @@account_collapse">
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" href="account-general.html">General</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" href="account-billing.html">Billing</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" href="account-contacts.html">Contacts</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" href="account-security.html">Security</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" href="account-notifications.html">Notification</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="#pages-profile" data-bs-toggle="collapse" aria-expanded="false" class="sidebar-link @@profile_active">
-                                            Profile
-                                        </a>
-                                        <ul id="pages-profile" class="sidebar-dropdown list-unstyled collapse sd-second-level @@profile_collapse">
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link @@profile_overview" href="profile.html">Overview</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="#pages-authentication" data-bs-toggle="collapse" aria-expanded="false" class="sidebar-link">
-                                            Authentication
-                                        </a>
-                                        <ul id="pages-authentication" class="sidebar-dropdown list-unstyled collapse sd-second-level">
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" target="_blank" href="page-auth-signin.html">SignIn</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" target="_blank" href="page-auth-signup.html">SignUp</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" target="_blank" href="page-auth-recover-pass.html">Recover password</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" href="page-auth-success.html">Success</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link" target="_blank" href="page-auth-lockscreen.html">lockscreen</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="sidebar-item"><a class="sidebar-link datatables_search" href="page-search.html">Search</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link datatables_invoice" href="page-invoice.html">Invoice</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link datatables_tasks" href="page-tasks.html">Tasks</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link datatables_pricing" href="page-pricing.html">Pricing</a></li>
-                                    <li class="sidebar-item">
-                                        <a href="#pages-projects" data-bs-toggle="collapse" aria-expanded="false" class="sidebar-link @@projects_active">
-                                            Projects
-                                        </a>
-                                        <ul id="pages-projects" class="sidebar-dropdown list-unstyled @@projects_collapse_show collapse sd-second-level">
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link @@projects" href="projects-list.html">List</a>
-                                            </li>
-                                            <li class="sidebar-item">
-                                                <a class="sidebar-link @@project_detail" href="project-detail.html">Details</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="sidebar-item"><a class="sidebar-link datatables_404" href="page-404.html">404 Error</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link datatables_blank" href="page-blank.html">Blank Page</a></li>
-                                </ul>
-                            </li>
+
 
 
                             <li class="nav-item mt-2 sidebar-title text-truncate small opacity-50">
