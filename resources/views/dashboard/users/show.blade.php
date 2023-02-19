@@ -24,15 +24,13 @@
                         <th>ID</th>
                         <th>First Name</th>
                         <th>Email</th>
-                        <th>Password</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{ $users->id }}</td>
-                            <td>{{ $users->name }}</td>
-                            <td>{{ $users->email }}</td>
-                            <td>{{ $users->password }}</td>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
                         </tr>
                     </tbody>
                 </table>

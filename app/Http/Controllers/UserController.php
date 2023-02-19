@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Validation;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -26,6 +28,19 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('users.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $name = $request->get('name');
         $email = $request->get('email');
         $password = bcrypt($request->get('password'));
@@ -41,8 +56,8 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $users = User::FindorFail($id);
-        $data = ['users' => $users];
+        $user = User::FindorFail($id);
+        $data = ['user' => $user];
         return view('dashboard.users.show')->with($data);
     }
 
@@ -55,6 +70,18 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('users.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $user = User::FindorFail($id);
 
         $user->fill($request->all())->save();

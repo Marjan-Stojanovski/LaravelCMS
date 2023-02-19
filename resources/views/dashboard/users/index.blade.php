@@ -27,7 +27,6 @@
                         <th class="text-center">ID</th>
                         <th class="text-center">First Name</th>
                         <th class="text-center">Email</th>
-                        <th class="text-center">Password</th>
                         <th class="text-center" colspan="2">Action</th>
                     </tr>
                     </thead>
@@ -37,7 +36,6 @@
                             <td class="text-center"><a href="{{route('users.show', $user->id)}}" class="btn btn-info">{{$user->id}}</a></td>
                             <td class="text-center">{{$user->name}}</td>
                             <td class="text-center">{{$user->email}}</td>
-                            <td class="text-center">{{$user->password}}</td>
                             <td class="text-center">
                                 <a href="{{route('users.edit', $user->id)}}" class="btn btn-warning">Edit</a>
                             </td>

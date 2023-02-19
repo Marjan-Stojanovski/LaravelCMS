@@ -12,19 +12,34 @@
                     <div class="mb-3 row">
                         <label for="name" class="col-sm-2 col-form-label">First Name</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="name" name="name" value="{{$users->name}}">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{$users->name}}">
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="email" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="email" name="email" value="{{$users->email}}">
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{$users->email}}">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="password" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-6">
-                            <input type="password" class="form-control" id="password" name="password" value="{{$users->password}}">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{$users->password}}">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

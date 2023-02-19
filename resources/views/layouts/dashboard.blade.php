@@ -396,7 +396,7 @@
                                 <div class="avatar-status status-online me-sm-2 avatar xs">
                                     <img src="assets/media/avatars/01.jpg" class="rounded-circle img-fluid" alt="">
                                 </div>
-                                <span class="d-none d-md-inline-block">{{ $user->name }}</span>
+                                <span class="d-none d-md-inline-block">LaravelCMS</span>
                             </div>
                         </a>
 
@@ -417,7 +417,7 @@
                                         d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
                                 </svg>
                                 <div class="position-relative">
-                                    <h5 class="mb-1">{{ $user->name }}</h5>
+                                    <h5 class="mb-1">LaravelCMS</h5>
                                     <p class="text-white text-opacity-75 small mb-0 lh-1">Full stack developer</p>
                                 </div>
                             </div>
