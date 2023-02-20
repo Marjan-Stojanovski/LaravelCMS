@@ -60,7 +60,7 @@
                             <span class="sidebar-text">
                     <!--Sidebar-text-->
                     <span class="sidebar-text text-truncate fs-3 fw-bold">
-                      LaravelCSM
+                      LaravelCMS
                     </span>
                   </span>
                         </div>

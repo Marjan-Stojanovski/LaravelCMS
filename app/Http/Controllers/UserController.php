@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Validation;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\Routing\Matcher\ExpressionLanguageProvider;
 
 class UserController extends Controller
 {
@@ -17,13 +20,17 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        $data = ['users' => $users];
+        $roles = Role::all();
+        $data = ['users' => $users, 'roles' => $roles];
         return view('dashboard.users.index')->with($data);
     }
 
     public function create()
     {
-        return view('dashboard/users.create');
+        $roles = Role::all();
+        $data = ['roles' => $roles];
+
+        return view('dashboard/users.create')->with($data);
     }
 
     public function store(Request $request)
@@ -33,6 +40,7 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'email' => 'required',
             'password' => 'required',
+            'role_id' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -44,11 +52,13 @@ class UserController extends Controller
         $name = $request->get('name');
         $email = $request->get('email');
         $password = bcrypt($request->get('password'));
+        $role_id = $request->get('role_id');
 
         User::create([
             'name' => $name,
             'email' => $email,
-            'password' => $password
+            'password' => $password,
+            'role_id' => $role_id
         ]);
 
         return redirect()->route('users.index');
@@ -63,8 +73,8 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $users = User::FindorFail($id);
-        $data = ['users' => $users];
+        $user = User::FindorFail($id);
+        $data = ['user' => $user];
         return view('dashboard.users.edit')->with($data);
     }
 
