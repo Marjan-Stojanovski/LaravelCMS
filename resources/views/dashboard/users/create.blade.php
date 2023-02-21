@@ -60,6 +60,23 @@
 
                         </div>
                     </div>
+                    <div class="mb-3 row">
+                        <label for="country_id" class="col-sm-2 col-form-label">Role</label>
+                        <div class="col-sm-6">
+                            <select name="country_id" class="form-control @error('country_id') is-invalid @enderror"
+                                    id="country_id">
+                                @foreach($countries as $country)
+                                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                @endforeach
+                                @error('country_id')
+                                <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message }}</strong>
+                            </span>
+                                @enderror
+                            </select>
+
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 

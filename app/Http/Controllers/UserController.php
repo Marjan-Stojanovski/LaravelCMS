@@ -21,14 +21,16 @@ class UserController extends Controller
     {
         $users = User::all();
         $roles = Role::all();
-        $data = ['users' => $users, 'roles' => $roles];
+        $countries = Country::all();
+        $data = ['users' => $users, 'roles' => $roles, 'countries' => $countries];
         return view('dashboard.users.index')->with($data);
     }
 
     public function create()
     {
         $roles = Role::all();
-        $data = ['roles' => $roles];
+        $countries = Country::all();
+        $data = ['roles' => $roles, 'countries' => $countries];
 
         return view('dashboard/users.create')->with($data);
     }
@@ -41,6 +43,7 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required',
             'role_id' => 'required',
+            'county_id' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -53,12 +56,14 @@ class UserController extends Controller
         $email = $request->get('email');
         $password = bcrypt($request->get('password'));
         $role_id = $request->get('role_id');
+        $country_id = $request->get('country_id');
 
         User::create([
             'name' => $name,
             'email' => $email,
             'password' => $password,
-            'role_id' => $role_id
+            'role_id' => $role_id,
+            'country_id' => $country_id
         ]);
 
         return redirect()->route('users.index');
@@ -66,8 +71,10 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = User::FindorFail($id);
-        $data = ['user' => $user];
+        $users = User::FindorFail($id);
+        $roles = Role::all();
+        $countries = Country::all();
+        $data = ['users' => $users, 'roles' => $roles, 'countries' => $countries];
         return view('dashboard.users.show')->with($data);
     }
 
