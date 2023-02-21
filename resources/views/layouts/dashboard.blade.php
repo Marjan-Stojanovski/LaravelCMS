@@ -73,7 +73,7 @@
                         <ul class="nav flex-column collapse-group collapse d-flex">
                             <li class="nav-item sidebar-title text-truncate opacity-50 small">
                                 <i class="bi bi-three-dots"></i>
-                                <span>Main</span>
+                                <span>Главно мени</span>
                             </li>
 
                             <!--Sidebar first item-->
@@ -84,7 +84,7 @@
                           productivity
                           </span>
                       </span>
-                                    <span class="sidebar-text">Users</span>
+                                    <span class="sidebar-text">Корисници</span>
                                 </a>
                             </li>
                             <!--Sidebar first item end-->
@@ -97,98 +97,15 @@
                           inventory
                           </span>
                       </span>
-                                    <span class="sidebar-text">Products</span>
+                                    <span class="sidebar-text">Продукти</span>
                                 </a>
                             </li>
                             <!--Sidebar second item end-->
-
-
-
-
-
-
-
-                            <li class="nav-item">
-                                <a href="#layouts" data-bs-toggle="collapse" aria-expanded="false"
-                                   class="nav-link d-flex align-items-center text-truncate ">
-                      <span class="sidebar-icon">
-                        <span class="material-symbols-rounded">
-                          space_dashboard
-                          </span>
-                      </span>
-                                    <!--Sidebar nav text-->
-                                    <span class="sidebar-text">Layouts</span>
-                                </a>
-                                <ul id="layouts" class="sidebar-dropdown list-unstyled collapse @@layout_collapse_show">
-                                    <li class="sidebar-item"><a class="sidebar-link @@layout_compact" href="layout-compact.html">Compact</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link" href="layout-horizontal.html">Horizontal</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link @@layout_boxed" href="layout-boxed.html">Boxed</a></li>
-                                </ul>
+                            <li class="nav-item sidebar-title text-truncate opacity-50 small">
+                                <i class="bi bi-three-dots"></i>
+                                <span>Општи подесувања</span>
                             </li>
 
-
-
-
-                            <li class="nav-item">
-                                <a href="#component-forms" data-bs-toggle="collapse" aria-expanded="false"
-                                   class="nav-link d-flex align-items-center text-truncate ">
-                      <span class="sidebar-icon">
-                        <span class="material-symbols-rounded">
-                          edit_note
-                          </span>
-                      </span>
-                                    <!--Sidebar nav text-->
-                                    <span class="sidebar-text">Forms</span>
-                                </a>
-                                <ul id="component-forms" class="sidebar-dropdown list-unstyled collapse @@form_collapse_show">
-                                    <li class="sidebar-item"><a class="sidebar-link @@form_bootstrap" href="ui-form-bootstrap.html">
-                                            Bootstrap</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link @@form_quill_editor" href="ui-form-editor.html">
-                                            Editor</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link @@form_stepper" href="ui-form-stepper.html">
-                                            Stepper</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link @@form_upload" href="ui-form-upload.html">
-                                            Upload</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link @@form_daterangepicker" href="ui-form-daterange-picker.html">
-                                            Daterangepicker</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link @@form_validation" href="ui-form-validation.html">
-                                            Validation</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link @@form_choices" href="ui-form-choices.html">
-                                            Choices</a></li>
-                                    <li class="sidebar-item"><a class="sidebar-link @@form_input_mask" href="ui-form-inputmask.html">
-                                            Inputmask</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center" href="#multi-level" data-bs-toggle="collapse" aria-expanded="false">
-                                    <div class="d-flex align-items-center">
-                        <span class="sidebar-icon">
-                          <span class="material-symbols-rounded">
-                            layers
-                            </span>
-                        </span>
-                                        <span class="sidebar-text">Multi level</span>
-                                    </div>
-                                </a>
-                                <ul id="multi-level" class="collapse sidebar-dropdown list-unstyled mb-0">
-                                    <li class="sidebar-item">
-                                        <a href="#level-2" data-bs-toggle="collapse" aria-expanded="false" class="sidebar-link">Level
-                                            Two</a>
-                                        <ul id="level-2" class="collapse sidebar-dropdown list-unstyled mb-0">
-
-                                            <li class="sidebar-item">
-                                                <a href="#level-3" data-bs-toggle="collapse" aria-expanded="false" class="sidebar-link">Level
-                                                    two item 2</a>
-                                                <ul id="level-3" class="collapse sidebar-dropdown list-unstyled mb-0">
-                                                    <li class="sidebar-item">
-                                                        <a href="#!" class="sidebar-link">Level three item 1</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
                         </ul>
                     </nav>
                 </div>

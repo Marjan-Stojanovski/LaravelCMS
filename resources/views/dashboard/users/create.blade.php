@@ -6,9 +6,9 @@
             <div class="col-md-12">
                 <form method="post" action="{{route('users.store')}}">
                     @csrf
-                    <h1>Create User</h1>
+                    <h1>Креирај корисник</h1>
                     <div class="mb-3 row">
-                        <label for="name" class="col-sm-2 col-form-label">First Name</label>
+                        <label for="name" class="col-sm-2 col-form-label">Име</label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
                                    name="name" value="{{ old('name') }}">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="role_id" class="col-sm-2 col-form-label">Role</label>
+                        <label for="role_id" class="col-sm-2 col-form-label">Улога</label>
                         <div class="col-sm-6">
                             <select name="role_id" class="form-control @error('role_id') is-invalid @enderror"
                                     id="role_id">
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="country_id" class="col-sm-2 col-form-label">Role</label>
+                        <label for="country_id" class="col-sm-2 col-form-label">Држава</label>
                         <div class="col-sm-6">
                             <select name="country_id" class="form-control @error('country_id') is-invalid @enderror"
                                     id="country_id">
@@ -77,7 +77,7 @@
 
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Внеси</button>
                 </form>
 
 

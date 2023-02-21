@@ -81,7 +81,9 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::FindorFail($id);
-        $data = ['user' => $user];
+        $roles = Role::all();
+        $countries = Country::all();
+        $data = ['user' => $user, 'roles' => $roles, 'countries' => $countries];
         return view('dashboard.users.edit')->with($data);
     }
 
@@ -91,6 +93,8 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'email' => 'required',
             'password' => 'required',
+            'role_id' => 'required',
+            'country_id' => 'required',
         ]);
 
         if ($validator->fails()) {
