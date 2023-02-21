@@ -3,49 +3,66 @@
 
     <div class="container">
         <div class="row">
-            <div class="toolbar px-3 px-lg-6 py-3">
-                <div class="position-relative container-fluid px-0">
-                    <div class="row align-items-center position-relative">
-                        <div class="col-md-8 mb-4 mb-md-0">
-                            <h1 class="mb-2"><span class="material-symbols-rounded">
-                          productivity
-                        </span> Users</h1>
-                        </div>
-                        <div class="col-md-4 text-md-end">
-                            <a href="{{route('users.create')}}" class="btn btn-primary">Create User</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-2">
+
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <table class="table table-bordered">
-                    <caption>List of users</caption>
+            <div class="col-md-12 col-ld-12 table-responsive">
+                <table class="table align-middle">
+                    <caption>Листа на корисници</caption>
                     <thead>
                     <tr>
+                        <th class="text-center" colspan="7">
+                            <div class="col-md-2">
+                                <a href="{{route('users.create')}}"
+                                   class="nav-link d-flex align-items-center text-truncate btn btn-info">
+                        <span class="material-symbols-rounded">
+                          add
+                          </span>
+                                    <span class="text">Додади корисник</span>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
                         <th class="text-center">ID</th>
-                        <th class="text-center">First Name</th>
-                        <th class="text-center">Email</th>
-                        <th class="text-center">Role</th>
-                        <th class="text-center" colspan="2">Action</th>
+                        <th class="text-center">Име</th>
+                        <th class="text-center">Маил</th>
+                        <th class="text-center">Улога</th>
+                        <th class="text-center" colspan="3">Акција</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($users as $user)
                         <tr>
-                            <td class="text-center"><a href="{{route('users.show', $user->id)}}" class="btn btn-info">{{$user->id}}</a></td>
+                            <td class="text-center">{{$user->id}}</td>
                             <td class="text-center">{{$user->name}}</td>
                             <td class="text-center">{{$user->email}}</td>
                             <td class="text-center">{{$user->role->name}}</td>
-                            <td class="text-center">
-                                <a href="{{route('users.edit', $user->id)}}" class="btn btn-warning">Edit</a>
+                            <td class="text-center" style="width: 10px">
+                                <a href="{{route('users.show', $user->id)}}" class="btn">
+                                    <span class="material-symbols-rounded">
+                          preview
+                          </span>
+                                </a>
                             </td>
-                            <td class="text-center">
+                            <td class="text-center" style="width: 10px">
+                                <a href="{{route('users.edit', $user->id)}}" class="btn">
+                                    <span class="material-symbols-rounded">
+                          edit
+                          </span>
+                                </a>
+                            </td>
+                            <td class="text-center" style="width: 10px">
                                 <form method="post" action="{{ route('users.destroy', $user->id) }}">
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn">
+                                        <span class="material-symbols-rounded">
+                          delete
+                          </span>
+                                    </button>
                                 </form>
                             </td>
                         </tr>
@@ -55,9 +72,5 @@
             </div>
         </div>
     </div>
-
-
-
-
 
 @endsection
