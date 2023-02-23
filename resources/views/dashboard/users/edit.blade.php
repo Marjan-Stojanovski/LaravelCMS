@@ -48,7 +48,7 @@
                             <select name="role_id" class="form-control @error('role_id') is-invalid @enderror"
                                     id="role_id">
                                 @foreach($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                    <option  class="choices__item" value="{{ $role->id }}">{{ $role->name }}</option>
                                 @endforeach
                                 @error('role')
                                 <span class="invalid-feedback" role="alert">
@@ -65,7 +65,7 @@
                             <select name="country_id" class="form-control @error('country_id') is-invalid @enderror"
                                     id="country_id">
                                 @foreach($countries as $country)
-                                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                    <option class="choices__item" value="{{ $country->id }}">{{ $country->name }}</option>
                                 @endforeach
                                 @error('country_id')
                                 <span class="invalid-feedback" role="alert">

@@ -43,7 +43,7 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required',
             'role_id' => 'required',
-            'county_id' => 'required'
+            'country_id' => 'required'
         ]);
 
         if ($validator->fails()) {

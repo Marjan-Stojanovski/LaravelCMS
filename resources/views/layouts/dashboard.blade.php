@@ -106,6 +106,29 @@
                                 <span>Општи подесувања</span>
                             </li>
 
+                            <li class="nav-item">
+                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-default btn-primary">
+                      <span class="sidebar-icon">
+                        <span class="material-symbols-rounded">
+                          Photo
+                          </span>
+                      </span>
+                                    <span class="sidebar-text">Слајдер</span>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-info">
+                      <span class="sidebar-icon">
+                        <span class="material-symbols-rounded">
+                          list
+                          </span>
+                      </span>
+                                    <span class="sidebar-text">Категории</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </nav>
                 </div>
