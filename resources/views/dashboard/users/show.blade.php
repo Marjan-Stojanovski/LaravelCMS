@@ -3,46 +3,66 @@
 
     <div class="container">
         <div class="row">
-            <div class="toolbar px-3 px-lg-6 py-3">
-                <div class="position-relative container-fluid px-0">
-                    <div class="row align-items-center position-relative">
-                        <div class="col-md-8 mb-4 mb-md-0">
-                            <h1 class="mb-2">Корисник</h1>
-                        </div>
-                        <div class="col-md-4 text-md-end">
-                            <a href="{{route('users.index')}}" class="btn btn-primary">Корисници</a>
+            <div class="card card-body">
+                <div class="table-responsive">
+                    <div class="container">
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="row justify-content-between align-items-center">
+                                    <div class="col-2">
+                                        <a class="btn btn-primary">Корисник</a>
+                                    </div>
+                                    <div class="col-md-4 text-md-end">
+                                        <a href="{{route('users.index')}}" class="btn btn-primary">Корисници</a>
+                                    </div>
+                                </div>
+                                <br>
+                                <!--Begin::table card-->
+                                <div class="card table-card table-nowrap mb-3 mb-lg-5">
+                                    <div class="table-responsive table-card table-nowrap">
+                                        <table class="table align-middle table-hover mb-0">
+                                            <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th class="text-center">Име</th>
+                                                <th class="text-center">Улога</th>
+                                                <th class="text-center">Држава</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>{{$users->id}}</td>
+                                                    <td class="text-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="mb-0">{{$users->name}}</h6>
+                                                                <small class="text-muted">{{$users->email}}</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-success fs-6">{{$users->role->name}}</span>
+                                                    </td>
+
+                                                    <td class="text-center">
+                                                        <span class="mb-0">{{$users->country->name}}</span>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th class="text-center">ID</th>
-                        <th class="text-center">Име</th>
-                        <th class="text-center">Email</th>
-                        <th class="text-center">Улога</th>
-                        <th class="text-center">Држава</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-center">{{ $users->id }}</td>
-                            <td class="text-center">{{ $users->name }}</td>
-                            <td class="text-center">{{ $users->email }}</td>
-                            <td class="text-center">{{ $users->role->name }}</td>
-                            <td class="text-center">{{ $users->country->name }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
-
-
 
 
 

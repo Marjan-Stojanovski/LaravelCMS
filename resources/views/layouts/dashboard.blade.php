@@ -71,14 +71,14 @@
                     <nav class="flex-grow-1 h-100" id="page-navbar">
                         <!--:Sidebar nav-->
                         <ul class="nav flex-column collapse-group collapse d-flex">
-                            <li class="nav-item sidebar-title text-truncate opacity-50 small">
+                            <li class="nav-item sidebar-title text-truncate opacity-30 small">
                                 <i class="bi bi-three-dots"></i>
                                 <span>Главно мени</span>
                             </li>
 
                             <!--Sidebar first item-->
                             <li class="nav-item">
-                                <a href="{{route('users.index')}}" class="nav-link d-flex align-items-center text-truncate btn btn-info">
+                                <a href="{{route('users.index')}}" class="nav-link d-flex align-items-center text-truncate btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           productivity
@@ -91,7 +91,7 @@
 
                             <!--Sidebar second item-->
                             <li class="nav-item">
-                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-info">
+                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           inventory
@@ -101,13 +101,13 @@
                                 </a>
                             </li>
                             <!--Sidebar second item end-->
-                            <li class="nav-item sidebar-title text-truncate opacity-50 small">
+                            <li class="nav-item sidebar-title text-truncate opacity-30 small">
                                 <i class="bi bi-three-dots"></i>
                                 <span>Општи подесувања</span>
                             </li>
 
                             <li class="nav-item">
-                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-default btn-primary">
+                                <a href="index-project-management.html" class="nav-link d-flex align-items-center btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           Photo
@@ -119,7 +119,7 @@
 
 
                             <li class="nav-item">
-                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-info">
+                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           list
