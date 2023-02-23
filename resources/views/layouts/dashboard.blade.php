@@ -78,7 +78,7 @@
 
                             <!--Sidebar first item-->
                             <li class="nav-item">
-                                <a href="{{route('users.index')}}" class="nav-link d-flex align-items-center text-truncate btn btn-primary" style="color: white">
+                                <a href="{{route('users.index')}}" class="d-flex align-items-center text-truncate btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           productivity
@@ -91,7 +91,7 @@
 
                             <!--Sidebar second item-->
                             <li class="nav-item">
-                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-primary" style="color: white">
+                                <a href="index-project-management.html" class="d-flex align-items-center text-truncate btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           inventory
@@ -107,7 +107,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="index-project-management.html" class="nav-link d-flex align-items-center btn btn-primary" style="color: white">
+                                <a href="index-project-management.html" class="d-flex align-items-center text-truncate btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           Photo
@@ -119,7 +119,7 @@
 
 
                             <li class="nav-item">
-                                <a href="index-project-management.html" class="nav-link d-flex align-items-center text-truncate btn btn-primary" style="color: white">
+                                <a href="index-project-management.html" class="d-flex align-items-center text-truncate btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           list
