@@ -21,6 +21,9 @@
                                         <div class="col-md-12">
                                             <label for="inputImage" data-tippy-placement="bottom"
                                                    data-tippy-content="Изберете слика" class="btn btn-primary me-3">
+                                                <span class="material-symbols-rounded align-middle me-2">
+                                                    image
+                                                    </span>
                                                 Изберете слика
                                             </label>
                                             <input type="file"
@@ -33,7 +36,7 @@
                                             @enderror
                                         </div>
                                         <div class="col-md-12">
-                                            <label for="title" class="form-label">Наслов на категорија</label>
+                                            <label for="name" class="form-label">Наслов на категорија</label>
                                             <input type="text"
                                                    class="form-control @error('name') is-invalid @enderror"
                                                    id="name" name="name" placeholder="Внесете име на категоријата">
@@ -44,9 +47,9 @@
                                             @enderror
                                         </div>
                                         <div class="col-md-12">
-                                            <label for="description" class="form-label">Опис</label>
+                                            <label for="desc" class="form-label">Опис</label>
                                             <textarea name="desc" id="description"
-                                                      placeholder="Додади опис за категоријата"
+                                                      placeholder="Внеси опис за категоријата"
                                                       class="form-control quill-editor"></textarea>
                                             @error('desc')
                                             <span class="invalid-feedback" role="alert">
