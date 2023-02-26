@@ -12,9 +12,6 @@
                                     <div class="col-2">
                                         <a class="btn btn-primary">Корисник</a>
                                     </div>
-                                    <div class="col-md-4 text-md-end">
-                                        <a href="{{route('users.index')}}" class="btn btn-primary">Корисници</a>
-                                    </div>
                                 </div>
                                 <br>
                                 <!--Begin::table card-->
@@ -54,9 +51,18 @@
 
                                             </tbody>
                                         </table>
+
                                     </div>
+
                                 </div>
                             </div>
+                        </div>
+                        <div class="text-end">
+                            <a href="{{route('users.index')}}" class="btn btn-secondary mb-2 me-2"
+                               data-tippy-content="Назад кон категории">
+                                                <span class="material-symbols-rounded align-middle me-2">
+                                                    arrow_back_ios
+                                                    </span> Назад</a>
                         </div>
                     </div>
                 </div>
