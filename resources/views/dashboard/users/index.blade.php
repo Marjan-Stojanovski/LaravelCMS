@@ -20,7 +20,18 @@
                                             <span class="sidebar-text">Креирај корисник</span>
                                         </a>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="text-end">
+                                                <button class="btn btn-success mb-2 me-2" data-tippy-content="Избриши">
+                                            <span class="material-symbols-rounded align-middle me-2">
+                                                groups
+                                            </span> Number of Users <h2> {{$userCount}}</h2>
+                                                </button>
+
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <br>
                                 <!--Begin::table card-->
                                 <div class="card table-card table-nowrap mb-3 mb-lg-5">

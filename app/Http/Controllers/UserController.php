@@ -22,7 +22,8 @@ class UserController extends Controller
         $users = User::all();
         $roles = Role::all();
         $countries = Country::all();
-        $data = ['users' => $users, 'roles' => $roles, 'countries' => $countries];
+        $userCount = $users->count();
+        $data = ['users' => $users, 'roles' => $roles, 'countries' => $countries, 'userCount' => $userCount];
         return view('dashboard.users.index')->with($data);
     }
 
