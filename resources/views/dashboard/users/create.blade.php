@@ -98,7 +98,10 @@
                                     </div>
                                 </div>
                                 <div class="text-end">
-                                    <button type="submit" id="profile_save" class="btn btn-primary">Сочувај
+                                    <button type="submit" id="profile_save" class="btn btn-primary">
+                                        <span class="material-symbols-rounded align-middle me-2">
+                                                    save
+                                                    </span>Сочувај
                                     </button>
                                 </div>
                             </div>

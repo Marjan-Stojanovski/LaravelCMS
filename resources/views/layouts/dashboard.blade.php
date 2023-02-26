@@ -119,7 +119,7 @@
 
 
                             <li class="nav-item">
-                                <a href="index-project-management.html" class="d-flex align-items-center text-truncate btn btn-primary" style="color: white">
+                                <a href="{{route('categories.index')}}" class="d-flex align-items-center text-truncate btn btn-primary" style="color: white">
                       <span class="sidebar-icon">
                         <span class="material-symbols-rounded">
                           list
