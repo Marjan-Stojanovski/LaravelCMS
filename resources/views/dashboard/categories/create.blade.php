@@ -10,9 +10,16 @@
                             <div class="card-body">
                                 <div class="card-header">
                                     <h5 class="mb-1 btn btn-info">Додади нова категорија</h5>
+
+                                    <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4 text-center">
                                     @if(Session::has('flash_message'))
-                                        <p class="alert alert-info">{{ Session::get('flash_message') }}</p>
+                                        <p class="alert alert-info">Категоријата е креирана</p>
                                     @endif
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
                                 </div>
                                 <div class="card-body">
                                     <form class="row g-3" method="post" action="{{ route('categories.store')}}"

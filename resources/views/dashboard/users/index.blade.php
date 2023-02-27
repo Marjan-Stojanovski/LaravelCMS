@@ -5,13 +5,11 @@
         <div class="row">
             <div class="card card-body">
                 <div class="table-responsive">
-                    <div class="container">
-                        <div class="row">
-                            <div class="card-body">
+                      <div class="card-body">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-2">
                                         <a href="{{route('users.create')}}"
-                                           class="nav-link d-flex align-items-center text-truncate btn btn-primary" style="color: white">
+                                           class="nav-link d-flex align-items-center text-truncate btn btn-primary" style="color: white; width: 200px">
                                             <span class="sidebar-icon">
                                                 <span class="material-symbols-rounded">
                                                  person_add
@@ -20,21 +18,11 @@
                                             <span class="sidebar-text">Креирај корисник</span>
                                         </a>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="text-end">
-                                                <button class="btn btn-success mb-2 me-2" data-tippy-content="Избриши">
-                                            <span class="material-symbols-rounded align-middle me-2">
-                                                groups
-                                            </span> Number of Users <h2> {{$userCount}}</h2>
-                                                </button>
-
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <br>
                                 <!--Begin::table card-->
-                                <div class="card table-card table-nowrap mb-3 mb-lg-5">
+                                <div class="  table-nowrap mb-3 mb-lg-5">
                                     <div class="table-responsive table-card table-nowrap">
                                         <table class="table align-middle table-hover mb-0">
                                             <thead>
@@ -58,7 +46,7 @@
                                                         </div>
                                                     </td>
                                                     <td class="text-center">
-                                                        <span class="badge bg-success fs-6">{{$user->role->name}}</span>
+                                                        <span class="fs-6">{{$user->role->name}}</span>
                                                     </td>
 
                                                     <td class="">

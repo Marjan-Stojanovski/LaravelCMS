@@ -42,4 +42,14 @@ Route::middleware(['web','auth'])->prefix('dashboard')->group(function() {
     Route::get('categories/{category}/edit', [\App\Http\Controllers\CategoryController::class, 'edit'])->name('categories.edit');
     Route::put('categories/{category}', [\App\Http\Controllers\CategoryController::class, 'update'])->name('categories.update');
     Route::delete('categories/{category}', [\App\Http\Controllers\CategoryController::class, 'destroy'])->name('categories.destroy');
+
+    //Products-web-route
+
+    Route::get('products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+    Route::get('products/create', [\App\Http\Controllers\ProductController::class, 'create'])->name('products.create');
+    Route::post('products', [\App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
+    Route::get('products/{product}', [\App\Http\Controllers\ProductController::class, 'show'])->name('products.show');
+    Route::get('products/{product}/edit', [\App\Http\Controllers\ProductController::class, 'edit'])->name('products.edit');
+    Route::put('products/{product}', [\App\Http\Controllers\ProductController::class, 'update'])->name('products.update');
+    Route::delete('products/{product}', [\App\Http\Controllers\ProductController::class, 'destroy'])->name('products.destroy');
 });

@@ -37,7 +37,6 @@ class Category extends Model
     public static function renderNode($node)
     {
         $list = '<li><a href="/dashboard/categories/' . $node->id . '/edit"  class="btn btn-primary">' . $node->name . '</a>
-                <a href="/assets/files/categories/'.$node->file.'" class="btn btn-sm" target="_black">'.$node->file.'</a>
              </li><br />';
         $children = self::where('parent_id', '=', $node->id)->get();
         $count = $children->count();
@@ -46,7 +45,7 @@ class Category extends Model
             foreach ($children as $child) {
                 $list .= self::renderNode($child);
             }
-            $list .= "</ul><hr>";
+            $list .= "</ul>";
 
         }
         return $list;

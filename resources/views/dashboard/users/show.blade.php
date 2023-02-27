@@ -15,7 +15,7 @@
                                 </div>
                                 <br>
                                 <!--Begin::table card-->
-                                <div class="card table-card table-nowrap mb-3 mb-lg-5">
+                                <div class=" table-nowrap mb-3 mb-lg-5">
                                     <div class="table-responsive table-card table-nowrap">
                                         <table class="table align-middle table-hover mb-0">
                                             <thead>
@@ -26,6 +26,7 @@
                                                 <th class="text-center">Држава</th>
 
                                             </tr>
+
                                             </thead>
                                             <tbody>
 
