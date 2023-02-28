@@ -71,12 +71,42 @@
                                                         <h4>Kategorija</h4>
                                                     </td>
                                                     <td>
-                                                        <a href=""></a>
-
+                                                        <div class="text-center">
+                                                        <label for="inputImage"
+                                                                       data-tippy-content="Изберете слика" class="btn btn-outline-secondary mb-2 me-2 small">
+                                                <span class="material-symbols-rounded align-middle me-2">
+                                                    add
+                                                    </span>
+                                                                    Изберете слика
+                                                                </label>
+                                                                <input type="file"
+                                                                       class="form-control d-none w-0 h-0 position-absolute @error('image') is-invalid @enderror"
+                                                                       id="inputImage" name="image">
+                                                                @error('image')
+                                                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                                                @enderror
+                                                        </div>
                                                     </td>
                                                     <td>
-                                                        <textarea class="form-control quill-editor"></textarea>
-
+                                                        <div class="text-center">
+                                                        <label for="inputImage" data-tippy-placement="bottom"
+                                                               data-tippy-content="Изберете слика" class="btn btn-outline-secondary mb-2 me-2">
+                                                <span class="material-symbols-rounded align-middle me-2">
+                                                    add
+                                                    </span>
+                                                            Изберете слика
+                                                        </label>
+                                                        <input type="file"
+                                                               class="form-control d-none w-0 h-0 position-absolute @error('image') is-invalid @enderror"
+                                                               id="inputImage" name="image">
+                                                        @error('image')
+                                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                                        @enderror
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endforeach

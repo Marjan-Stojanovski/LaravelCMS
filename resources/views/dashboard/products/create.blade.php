@@ -17,7 +17,7 @@
                                 </div>
                                 <hr class="my-4">
                                 <div class="row">
-                                    <div class="col-12 col-md-6 mb-3">
+                                    <div class="col-12 col-md-6 mb-3 d-inline-block">
                                         <!-- First name -->
                                         <div class="form-group">
                                             <!-- Label -->
@@ -33,7 +33,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 mb-3">
+                                    <div class="col-12 col-md-6 mb-3 d-inline-block">
                                         <div class="form-group">
                                             <!-- Label -->
                                             <label for="category_id" class="form-label">Категорија</label>
@@ -53,26 +53,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
-
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <div class="form-group">
-                                            <!-- Label -->
-                                            <label class="form-label" for="description">Опис на производот</label>
-                                            <!-- Input -->
-                                            <input type="text" placeholder="Опис на производот"
-                                                   class="form-control  @error('description') is-invalid @enderror"
-                                                   id="description" name="description">
-                                            @error('description')
-                                            <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-12 col-md-6 mb-3">
                                         <div class="col-md-12">
+                                            <br>
                                             <label for="inputImage" data-tippy-placement="bottom"
                                                    data-tippy-content="Изберете слика" class="btn btn-primary me-3">
                                                 <span class="material-symbols-rounded align-middle me-2">
@@ -106,6 +89,23 @@
                                                     </span>
                                                 @enderror
                                             </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-md-6 mb-3">
+                                        <div class="form-group">
+                                            <!-- Label -->
+                                            <label class="form-label" for="description">Опис на производот</label>
+                                            <!-- Input -->
+                                            <textarea
+                                                class="form-control quill-editor @error('description') is-invalid @enderror"
+                                                id="description" name="description"></textarea>
+                                            @error('description')
+                                            <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
