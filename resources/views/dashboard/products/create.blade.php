@@ -21,12 +21,12 @@
                                         <!-- First name -->
                                         <div class="form-group">
                                             <!-- Label -->
-                                            <label class="form-label" for="name">Име</label>
+                                            <label class="form-label" for="title">Име</label>
                                             <!-- Input -->
                                             <input type="text" placeholder="Име на производот"
-                                                   class="form-control @error('name') is-invalid @enderror"
-                                                   id="name" name="name">
-                                            @error('name')
+                                                   class="form-control @error('title') is-invalid @enderror"
+                                                   id="title" name="title">
+                                            @error('title')
                                             <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -34,38 +34,26 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
-                                        <!-- First name -->
                                         <div class="form-group">
                                             <!-- Label -->
-                                            <label class="form-label" for="price">Цена на производот</label>
-                                            <!-- Input -->
-                                            <input type="text" placeholder="10.00 МКД"
-                                                   class="form-control  @error('price') is-invalid @enderror"
-                                                   id="price" name="price">
-                                            @error('price')
-                                            <span class="invalid-feedback" role="alert">
+                                            <label for="category_id" class="form-label">Категорија</label>
+                                            <!--select-->
+                                            <select name="category_id" id="category_id"
+                                                    class="form-control @error('category_id') is-invalid @enderror">
+                                                @foreach($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                                @error('category_id')
+                                                <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
-                                            @enderror
+                                                @enderror
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <div class="form-group">
-                                            <!-- Label -->
-                                            <label class="form-label" for="quantity">Квантитет</label>
-                                            <!-- Input -->
-                                            <input type="text" placeholder="10 пар."
-                                                   class="form-control  @error('quantity') is-invalid @enderror"
-                                                   id="quantity" name="quantity">
-                                            @error('quantity')
-                                            <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
+
                                     <div class="col-12 col-md-6 mb-3">
                                         <div class="form-group">
                                             <!-- Label -->

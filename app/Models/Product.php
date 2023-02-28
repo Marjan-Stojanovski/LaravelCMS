@@ -12,11 +12,11 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = [
-        'name',
-        'price',
-        'quantity',
-        'description',
+        'title',
+        'slug',
         'image',
+        'category_id',
+        'description',
         'user_id'
     ];
 

@@ -25,7 +25,7 @@
     <!--Choices css-->
     <link rel="stylesheet" href="/assets/vendor/css/choices.min.css">
 
-
+    <link href="//cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
     <!--Main style-->
     <link rel="stylesheet" href="/assets/css/style.min.css">
 </head>
@@ -371,7 +371,11 @@
 
             <!--//Page Toolbar End//-->
 
-            @yield('content')
+            <div class="content pt-3 px-3 px-lg-6 d-flex flex-column-fluid">
+                <div class="container-fluid px-0">
+                    @yield('content')
+                </div>
+            </div>
 
             <!--//Page-footer//-->
             <footer class="pb-3 pb-lg-5 px-3 px-lg-6">
@@ -398,6 +402,8 @@
 <!--Datatables-->
 <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap5.min.js"></script>
+<script src="//cdn.quilljs.com/1.0.0/quill.min.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Datatables Responsive
@@ -406,7 +412,30 @@
             "length": false
         });
     });
+
+    var toolbarOptions = [
+        ["bold", "underline"],
+        ["link", "blockquote", "code", "image"],
+        [{list: "ordered"}, {list: "bullet"}]
+    ];
+    $('.quill-editor').each(function (i, el) {
+        var el = $(this), id = 'quilleditor-' + i, val = el.val(), editor_height = 200;
+        var div = $('<div/>').attr('id', id).css('height', editor_height + 'px').html(val);
+        el.addClass('d-none');
+        el.parent().append(div);
+
+        var quill = new Quill('#' + id, {
+            modules: {toolbar: toolbarOptions},
+            theme: 'snow'
+        });
+        quill.on('text-change', function () {
+            console.log(quill.container.firstChild.innerHTML);
+            el.html();
+            $("#description").val(quill.container.firstChild.innerHTML);
+        });
+    });
 </script>
+
 </body>
 
 </html>

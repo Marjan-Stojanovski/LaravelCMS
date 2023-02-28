@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Helpers\ImageStore;
 use App\Models\Product;
 use App\Models\Role;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -29,17 +31,18 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $users = User::all();
-        $data = ['products' => $products, 'users' => $users];
+        $categories = Category::all();
+        $data = ['products' => $products, 'users' => $users, 'categories' => $categories];
         return view('dashboard.products.create')->with($data);
     }
 
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'price' => 'required',
-            'quantity' => 'required',
+            'title' => 'required|max:255',
             'image' => 'required',
+            'category_id' => 'required',
+            'description' => 'required',
             'user_id' => 'required'
         ]);
 
@@ -49,22 +52,23 @@ class ProductController extends Controller
                 ->withInput();
         }
 
-        $name = $request->get('name');
-        $price = $request->get('price');
-        $quantity = $request->get('quantity');
-        $description = $request->get('description');
+        $title = $request->get('title');
+        $slug = Str::slug($request->get('title'));
         $image = $request->get('image');
+        $category_id = $request->get('category_id');
+        $description = $request->get('description');
         $user_id = $request->get('user_id');
+
 
         $imageObj = new ImageStore($request, 'products');
         $image = $imageObj->imageStore();
 
         Product::create([
-        'name' => $name,
-        'price' => $price,
-        'quantity' => $quantity,
-        'description' => $description,
+        'title' => $title,
+        'slug' => $slug,
         'image' => $image,
+        'category_id' => $category_id,
+        'description' => $description,
         'user_id' => $user_id
         ]);
 
@@ -77,3 +81,4 @@ class ProductController extends Controller
     }
 
 }
+

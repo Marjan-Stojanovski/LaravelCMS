@@ -60,7 +60,7 @@
                         </div>
                         <div class="text-end">
                             <a href="{{route('users.index')}}" class="btn btn-secondary mb-2 me-2"
-                               data-tippy-content="Назад кон категории">
+                               data-tippy-content="Назад кон корисници">
                                                 <span class="material-symbols-rounded align-middle me-2">
                                                     arrow_back_ios
                                                     </span> Назад</a>

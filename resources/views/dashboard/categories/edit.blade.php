@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 responsi">
-                                <img class="img-responsive" style="image-re" src="/assets/img/categories/thumbnails/{{ $category->image }}" alt="image-"/>
+                                <img class="img-responsive" class="img-responsive" src="/assets/img/categories/thumbnails/{{ $category->image }}" alt="image-"/>
                             </div>
                         </div>
                         <form class="row g-3" method="post" action="{{ route('categories.update', $category->id) }}"

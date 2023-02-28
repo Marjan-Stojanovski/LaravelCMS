@@ -41,11 +41,12 @@
                                             <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th class="text-center">Име</th>
-                                                <th class="text-center">Опис на продуктот</th>
-                                                <th class="text-center">Слика на продуктот</th>
+                                                <th class="text-center">Слика</th>
+                                                <th class="text-center">Наслов</th>
+                                                <th class="text-center">Опис</th>
                                                 <th class="text-center">Категорија</th>
-                                                <th class="text-center">Категорија</th>
+                                                <th class="text-center">Слајдер</th>
+                                                <th class="text-center">Фајл</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -55,27 +56,27 @@
                                                     <td class="text-center">
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-grow-1">
-                                                                <h6 class="mb-0">{{$product->name}}</h6>
-                                                                <br>
-                                                                <br>
-                                                                <small class="text-muted">Цена {{$product->price}} ден.</small>
+                                                                <img src="/assets/img/products/thumbnails/{{ $product->image }}" class="mb-0 img-responsive" style="width: 50px">
                                                             </div>
                                                         </div>
                                                     </td>
                                                     <td class="text-center">
-                                                        <span
-                                                            class="text">{{$product->description}}</span>
+                                                        <span class="text">{{$product->title}}</span>
                                                     </td>
 
                                                     <td class="text-center">
-                                                        <img src="/assets/img/products/thumbnails/{{ $product->image }}" style="width: 300px" alt="Slider"/>
+                                                        <span class="text">{{$product->slug}}</span>
                                                     </td>
                                                     <td class="text-center">
                                                         <h4>Kategorija</h4>
                                                     </td>
                                                     <td>
                                                         <a href=""></a>
-                                                        <a href=""></a>
+
+                                                    </td>
+                                                    <td>
+                                                        <textarea class="form-control quill-editor"></textarea>
+
                                                     </td>
                                                 </tr>
                                             @endforeach
