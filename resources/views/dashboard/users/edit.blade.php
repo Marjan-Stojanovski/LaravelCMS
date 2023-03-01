@@ -13,7 +13,7 @@
                             <div class="card-body">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-12">
-                                        <h1 class="btn btn-primary">Промени корисник</h1>
+                                        <h3>Промени корисник</h3>
                                     </div>
                                 </div>
                                 <hr class="my-4">

@@ -31,7 +31,7 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $users = User::all();
-        $categories = Category::all();
+        $categories = Category::getList();
         $data = ['products' => $products, 'users' => $users, 'categories' => $categories];
         return view('dashboard.products.create')->with($data);
     }
@@ -78,6 +78,51 @@ class ProductController extends Controller
         $data = ['products' => $products, 'users' => $users, 'productsCount' => $productsCount];
         return view('dashboard.products.index')->with($data);
 
+    }
+
+    public function edit($id)
+    {
+        $product = Product::FindorFail($id);
+        $categories = Category::getList();
+        $users = User::all();
+        $data = ['product' => $product, 'users' => $users, 'categories' => $categories];
+        return view('dashboard.products.edit')->with($data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+            'image' => 'required',
+            'category_id' => 'required',
+            'description' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $product = Product::FindorFail($id);
+        $image = $request->get('image');
+        $imageObj = new ImageStore($request, 'products');
+        $image = $imageObj->imageStore();
+
+        $input = $request->all();
+        $input['image'] = $image;
+
+        $product->fill($input)->save();
+
+        return redirect()->route('products.index');
+    }
+
+    public function destroy($id)
+    {
+        $product = Product::FindorFail($id);
+        $product->delete();
+        return redirect()->route('products.index');
     }
 
 }

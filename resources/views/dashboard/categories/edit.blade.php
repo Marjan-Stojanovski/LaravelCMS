@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="text-start">
-                                    <h4 class="btn btn-info mb-1">Измени категорија</h4>
+                                    <h3>Измени категорија</h3>
                                 </div>
                             </div>
                             <div class="col-md-6">

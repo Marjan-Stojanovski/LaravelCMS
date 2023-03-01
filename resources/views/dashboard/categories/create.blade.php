@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="card-body">
                                 <div class="card-header">
-                                    <h5 class="mb-1 btn btn-info">Додади нова категорија</h5>
+                                    <h3>Додади нова категорија</h3>
 
                                     <div class="row">
                                     <div class="col-md-4"></div>
@@ -31,7 +31,7 @@
                                                 <span class="material-symbols-rounded align-middle me-2">
                                                     image
                                                     </span>
-                                                Изберете слика
+                                                Избери слика
                                             </label>
                                             <input type="file"
                                                    class="form-control d-none w-0 h-0 position-absolute @error('image') is-invalid @enderror"
@@ -56,7 +56,6 @@
                                         <div class="col-md-12">
                                             <label for="desc" class="form-label">Опис</label>
                                             <textarea name="desc" id="description"
-                                                      placeholder="Внеси опис за категоријата"
                                                       class="form-control quill-editor"></textarea>
                                             @error('desc')
                                             <span class="invalid-feedback" role="alert">

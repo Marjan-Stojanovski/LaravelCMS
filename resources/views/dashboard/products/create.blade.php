@@ -12,7 +12,7 @@
                             <div class="card-body">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-12">
-                                        <h1 class="btn btn-primary">Креирај производ</h1>
+                                        <h3>Креирај производ</h3>
                                     </div>
                                 </div>
                                 <hr class="my-4">
@@ -35,20 +35,13 @@
                                     </div>
                                     <div class="col-12 col-md-6 mb-3 d-inline-block">
                                         <div class="form-group">
-                                            <!-- Label -->
-                                            <label for="category_id" class="form-label">Категорија</label>
-                                            <!--select-->
-                                            <select name="category_id" id="category_id"
-                                                    class="form-control @error('category_id') is-invalid @enderror">
-                                                @foreach($categories as $category)
-                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                                @endforeach
-                                                @error('category_id')
-                                                <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                            </select>
+                                            <div class="col-md-12">
+                                                <label for="category_id" class="form-label">Под категорија</label>
+                                                <select id="category_id" class="form-select" name="category_id">
+                                                    <option value="">Главна Категорија</option>
+                                                    {!! $categories !!}
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -110,13 +103,13 @@
                                     </div>
                                 </div>
                                 <div class="text-end">
-                                    <button type="submit" id="profile_save" class="btn btn-primary">
+                                    <button type="submit" id="profile_save" class="btn btn-primary" data-tippy-content="Сочувај">
                                         <span class="material-symbols-rounded align-middle me-2">
                                                     save
                                                     </span>Сочувај
                                     </button>
                                     <a href="{{route('products.index')}}" class="btn btn-secondary"
-                                       data-tippy-content="Назад кон корисници">
+                                       data-tippy-content="Назад кон продукти">
                                                 <span class="material-symbols-rounded align-middle me-2">
                                                     arrow_back_ios
                                                     </span> Назад</a>

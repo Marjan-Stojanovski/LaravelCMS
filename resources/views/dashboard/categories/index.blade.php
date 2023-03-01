@@ -1,9 +1,13 @@
 @extends('layouts.dashboard')
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="card card-body">
-                <div class="table-responsive">
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
+    <div class="card table-card table-nowrap mb-3 mb-lg-5">
+        <div class="table-responsive table-card">
+            <div class="container-fluid">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12">

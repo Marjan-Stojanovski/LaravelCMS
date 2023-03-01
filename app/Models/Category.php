@@ -36,8 +36,10 @@ class Category extends Model
     }
     public static function renderNode($node)
     {
-        $list = '<li><a href="/dashboard/categories/' . $node->id . '/edit"  class="btn btn-primary">' . $node->name . '</a>
-             </li><br />';
+        $list = '<li><span class="material-symbols-rounded align-middle me-2">
+                          <i class="fs-2 text-primary d-block mb-2 bi bi-arrow-right-short"></i>
+                     </span> <a href="/dashboard/categories/' . $node->id . '/edit"  class="btn btn-primary">' . $node->name . '</a>
+             </li><br/>';
         $children = self::where('parent_id', '=', $node->id)->get();
         $count = $children->count();
         if ($count > 0) {

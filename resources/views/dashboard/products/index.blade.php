@@ -1,21 +1,17 @@
 @extends('layouts.dashboard');
 @section('content')
 
-    <div class="container">
-        <div class="row">
-            <div class="card card-body">
-                <div class="table-responsive">
-                    <div class="container">
-                        <div class="row">
-                            <div class="card-body">
+    <div class="card table-card table-nowrap mb-3 mb-lg-5">
+        <div class="table-responsive table-card">
+            <div class="container-fluid">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-2">
                                         <a href="{{route('products.create')}}"
                                            class="nav-link d-flex align-items-center text-truncate btn btn-primary"
-                                           style="color: white">
+                                           style="color: white; width: 200px">
                                             <span class="sidebar-icon">
                                                 <span class="material-symbols-rounded">
-                                                 person_add
+                                                 add
                                                 </span>
                                             </span>
                                             <span class="sidebar-text">Креирај производ</span>
@@ -23,10 +19,9 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="text-end">
-                                            <button class="btn btn-success mb-2 me-2" data-tippy-content="Избриши">
-                                            <span class="material-symbols-rounded align-middle me-2">
-                                                groups
-                                            </span> Број на продукти <h2>{{$productsCount}}</h2>
+                                            <br>
+                                            <button class="btn btn-success mb-2 me-2" data-tippy-content="Број на продукти">
+                                             Број на продукти <h2>{{$productsCount}}</h2>
                                             </button>
 
                                         </div>
@@ -35,9 +30,8 @@
 
                                 <br>
                                 <!--Begin::table card-->
-                                <div class="card table-card table-nowrap mb-3 mb-lg-5">
-                                    <div class="table-responsive table-card table-nowrap">
-                                        <table class="table align-middle table-hover mb-0">
+
+                                        <table class="table table-responsive align-middle table-hover mb-0">
                                             <thead>
                                             <tr>
                                                 <th>Id</th>
@@ -52,7 +46,8 @@
                                             <tbody>
                                             @foreach($products as $product)
                                                 <tr>
-                                                    <td>{{$product->id}}</td>
+                                                    <td><a class="btn btn-info" href="{{route('products.edit', $product->id)}}">{{$product->id}}</a></td>
+                                                    @csrf
                                                     <td class="text-center">
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-grow-1">
@@ -65,19 +60,19 @@
                                                     </td>
 
                                                     <td class="text-center">
-                                                        <span class="text">{{$product->slug}}</span>
+                                                        <span class="text">{{strip_tags(mb_strimwidth($product->slug, 0, 20))}}</span>
                                                     </td>
                                                     <td class="text-center">
-                                                        <h4>Kategorija</h4>
+                                                        <h6>{{$product->category->name}}</h6>
                                                     </td>
-                                                    <td>
-                                                        <div class="text-center">
+                                                    <td class="text-center">
+                                                        <div class="align-middle">
                                                         <label for="inputImage"
-                                                                       data-tippy-content="Изберете слика" class="btn btn-outline-secondary mb-2 me-2 small">
-                                                <span class="material-symbols-rounded align-middle me-2">
+                                                                       data-tippy-content="Изберете слика" class="btn btn-sm btn-outline-dark">
+                                                <span class="material-symbols-rounded align-middle" style="width: 20px">
                                                     add
                                                     </span>
-                                                                    Изберете слика
+                                                                   <span style="font-size: x-small">Изберете слика</span>
                                                                 </label>
                                                                 <input type="file"
                                                                        class="form-control d-none w-0 h-0 position-absolute @error('image') is-invalid @enderror"
@@ -89,17 +84,17 @@
                                                                 @enderror
                                                         </div>
                                                     </td>
-                                                    <td>
-                                                        <div class="text-center">
-                                                        <label for="inputImage" data-tippy-placement="bottom"
-                                                               data-tippy-content="Изберете слика" class="btn btn-outline-secondary mb-2 me-2">
-                                                <span class="material-symbols-rounded align-middle me-2">
+                                                    <td class="text-center">
+                                                        <div class="align-middle">
+                                                        <label for="inputImage"
+                                                               data-tippy-content="Изберете слика" class="btn btn-sm btn-outline-dark">
+                                                <span class="material-symbols-rounded align-middle" style="width: 20px">
                                                     add
                                                     </span>
-                                                            Изберете слика
+                                                            <span style="font-size: x-small">Изберете слика</span>
                                                         </label>
                                                         <input type="file"
-                                                               class="form-control d-none w-0 h-0 position-absolute @error('image') is-invalid @enderror"
+                                                               class="form-control d-none w-0 h-0 @error('image') is-invalid @enderror"
                                                                id="inputImage" name="image">
                                                         @error('image')
                                                         <span class="invalid-feedback" role="alert">
