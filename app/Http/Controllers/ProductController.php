@@ -91,6 +91,7 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:255',
             'image' => 'required',
@@ -114,6 +115,7 @@ class ProductController extends Controller
         $input['image'] = $image;
 
         $product->fill($input)->save();
+
 
         return redirect()->route('products.index');
     }

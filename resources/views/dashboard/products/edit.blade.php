@@ -63,7 +63,7 @@
                                         <div class="col-md-12">
                                             <label for="category_id" class="form-label">Под категорија</label>
                                             <select id="category_id" class="form-select" name="category_id">
-                                                <option value="">{{$product->category->name}}</option>
+                                                <option value="{{$product->category->id}}">{{$product->category->name}}</option>
                                                 {!! $categories !!}
                                             </select>
                                         </div>

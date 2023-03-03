@@ -25,7 +25,7 @@
     <!--Choices css-->
     <link rel="stylesheet" href="/assets/vendor/css/choices.min.css">
 
-    <link href="//cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+    <link href="/assets/vendor/css/quill.snow.css" rel="stylesheet">
     <!--Main style-->
     <link rel="stylesheet" href="/assets/css/style.min.css">
 </head>
@@ -402,7 +402,8 @@
 <!--Datatables-->
 <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap5.min.js"></script>
-<script src="//cdn.quilljs.com/1.0.0/quill.min.js"></script>
+
+<script src="/assets/vendor/quill.min.js"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {

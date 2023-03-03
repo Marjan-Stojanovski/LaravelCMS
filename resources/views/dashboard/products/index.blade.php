@@ -46,7 +46,7 @@
                                             <tbody>
                                             @foreach($products as $product)
                                                 <tr>
-                                                    <td><a class="btn btn-info" data-tippy-content="Прикажи/Измени продукт" href="{{route('products.edit', $product->id)}}">{{$product->id}}</a></td>
+                                                    <td><a class="btn btn-info" style="width: 40px" data-tippy-content="Прикажи/Измени продукт" href="{{route('products.edit', $product->id)}}">{{$product->id}}</a></td>
                                                     @csrf
                                                     <td class="text-center">
                                                         <div class="d-flex align-items-center">
