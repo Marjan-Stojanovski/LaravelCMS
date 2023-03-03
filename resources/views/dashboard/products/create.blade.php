@@ -12,7 +12,7 @@
                             <div class="card-body">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-12">
-                                        <h3>Креирај производ</h3>
+                                        <h3>Креирај продукт</h3>
                                     </div>
                                 </div>
                                 <hr class="my-4">
@@ -23,7 +23,7 @@
                                             <!-- Label -->
                                             <label class="form-label" for="title">Име</label>
                                             <!-- Input -->
-                                            <input type="text" placeholder="Име на производот"
+                                            <input type="text" placeholder="Име на продуктот"
                                                    class="form-control @error('title') is-invalid @enderror"
                                                    id="title" name="title">
                                             @error('title')
@@ -89,7 +89,7 @@
                                     <div class="col-md-12 col-md-6 mb-3">
                                         <div class="form-group">
                                             <!-- Label -->
-                                            <label class="form-label" for="description">Опис на производот</label>
+                                            <label class="form-label" for="description">Опис на продуктот</label>
                                             <!-- Input -->
                                             <textarea
                                                 class="form-control quill-editor @error('description') is-invalid @enderror"
