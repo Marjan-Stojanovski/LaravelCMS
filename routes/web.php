@@ -52,4 +52,10 @@ Route::middleware(['web','auth'])->prefix('dashboard')->group(function() {
     Route::get('products/{product}/edit', [\App\Http\Controllers\ProductController::class, 'edit'])->name('products.edit');
     Route::put('products/{product}', [\App\Http\Controllers\ProductController::class, 'update'])->name('products.update');
     Route::delete('products/{product}', [\App\Http\Controllers\ProductController::class, 'destroy'])->name('products.destroy');
+
+    //Settings-web-route
+
+    Route::get('settings', [\App\Http\Controllers\SettingsControler::class, 'index'])->name('settings.index');
+    Route::get('settings/create', [\App\Http\Controllers\SettingsControler::class, 'create'])->name('settings.create');
+    Route::post('settings', [\App\Http\Controllers\SettingsControler::class, 'store'])->name('settings.store');
 });
