@@ -3,15 +3,15 @@
     <div class="container-fluid">
         <div class="row justify-content-between align-items-center">
             <div class="col-2">
-                <a href="{{route('settings.create')}}"
+                <a href="{{route('settings.edit', $settings->id)}}"
                    class="nav-link d-flex align-items-center text-truncate btn btn-primary"
-                   style="color: white; width: 200px">
+                   style="color: white; width: 230px">
                                             <span class="sidebar-icon">
                                                 <span class="material-symbols-rounded">
                                                  settings
                                                 </span>
                                             </span>
-                    <span class="sidebar-text" data-tippy-content="Додади информации">Подесувања</span>
+                    <span class="sidebar-text" data-tippy-content="Додади информации">Промени подесувања</span>
                 </a>
                 <br>
             </div>
@@ -53,44 +53,44 @@
                         <tr class="align-middle" style="height: 50px">
                             <td>Twitter</td>
                             <td>
-                                <div class="fs-6 d-flex justify-content-between align-items-center">{{$settings->twitter}}</div>
+                                <div class="fs-6 d-flex justify-content-between align-items-center link-primary"><a href="{{$settings->twitter}}">{{$settings->twitter}}</a></div>
                             </td>
                         </tr>
                         <tr class="align-middle" style="height: 50px">
                             <td>Facebook</td>
                             <td>
-                                <div class="fs-6 d-flex justify-content-between align-items-center">{{$settings->facebook}}</div>
+                                <div class="fs-6 d-flex justify-content-between align-items-center link-primary"><a href="{{$settings->facebook}}">{{$settings->facebook}}</a></div>
                             </td>
                         </tr>
                         <tr class="align-middle" style="height: 50px">
                             <td>Skype</td>
                             <td>
-                                <div class="fs-6 d-flex justify-content-between align-items-center">{{$settings->skype}}</div>
+                                <div class="fs-6 d-flex justify-content-between align-items-center link-primary"><a href="{{$settings->skype}}">{{$settings->skype}}</a></div>
                             </td>
                         </tr>
 
                         <tr class="align-middle" style="height: 50px">
                             <td>LinkedIn</td>
                             <td>
-                                <div class="fs-6 d-flex justify-content-between align-items-center">{{$settings->linkedin}}</div>
+                                <div class="fs-6 d-flex justify-content-between align-items-center link-primary"><a href="{{$settings->linkedin}}">{{$settings->linkedin}}</a></div>
                             </td>
                         </tr>
                         <tr class="align-middle" style="height: 50px">
                             <td>Youtube</td>
                             <td>
-                                <div class="fs-6 d-flex justify-content-between align-items-center">{{$settings->youtube}}</div>
+                                <div class="fs-6 d-flex justify-content-between align-items-center link-primary"><a href="{{$settings->youtube}}">{{$settings->youtube}}</a></div>
                             </td>
                         </tr>
                         <tr class="align-middle" style="height: 50px">
                             <td>Flickr</td>
                             <td>
-                                <div class="fs-6 d-flex justify-content-between align-items-center">{{$settings->flickr}}</div>
+                                <div class="fs-6 d-flex justify-content-between align-items-center link-primary"><a href="{{$settings->flickr}}">{{$settings->flickr}}</a></div>
                             </td>
                         </tr>
                         <tr class="align-middle" style="height: 50px">
                             <td>Pinterest</td>
                             <td>
-                                <div class="fs-6 d-flex justify-content-between align-items-center">{{$settings->pinterest}}</div>
+                                <div class="fs-6 d-flex justify-content-between align-items-center link-primary"><a href="{{$settings->pinterest}}">{{$settings->pinterest}}</a></div>
                             </td>
                         </tr>
                         </tbody>

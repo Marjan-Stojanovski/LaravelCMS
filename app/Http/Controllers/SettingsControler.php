@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
@@ -19,8 +20,16 @@ class SettingsControler extends Controller
     public function index()
     {
         $settings = Settings::first();
-        $data = ['settings' => $settings];
-        return view('dashboard.settings.index')->with($data);
+        $users = User::all();
+
+        $data = ['users' => $users, "settings" => $settings];
+        if (empty($settings)) {
+            return view('dashboard.settings.create')->with($data);
+        } else {
+            $settings = Settings::first();
+            $data = ['users' => $users, "settings" => $settings];
+            return view('dashboard.settings.index')->with($data);
+        }
     }
 
     public function create()
@@ -92,6 +101,51 @@ class SettingsControler extends Controller
         ]);
 
         $settings = Settings::all();
+        $data = ['settings' => $settings];
+
+        return view('dashboard.settings.index')->with($data);
+    }
+
+    public function edit()
+    {
+        $settings = Settings::first();
+        $users = User::all();
+        $data = ['settings' => $settings, 'users' => $users];
+
+        return view('dashboard.settings.edit')->with($data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+            'mainurl' => 'required',
+            'email' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'link' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('settings.edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $setting = Settings::FindorFail($id);
+        $image = $request->get('image');
+        $imageObj = new ImageStore($request, 'settings');
+        $image = $imageObj->imageStore();
+
+        $input = $request->all();
+        $input['image'] = $image;
+
+        $setting->fill($input)->save();
+
+        $settings = Settings::first();
         $data = ['settings' => $settings];
 
         return view('dashboard.settings.index')->with($data);
