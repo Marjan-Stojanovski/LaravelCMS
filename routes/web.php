@@ -90,4 +90,14 @@ Route::middleware(['web','auth'])->prefix('dashboard')->group(function() {
     Route::get('stats/{stats}/edit', [\App\Http\Controllers\StaticPagesController::class, 'edit'])->name('stats.edit');
     Route::put('stats/{stats}', [\App\Http\Controllers\StaticPagesController::class, 'update'])->name('stats.update');
     Route::delete('stats/{stat}', [\App\Http\Controllers\StaticPagesController::class, 'destroy'])->name('stats.destroy');
+
+    //Slyder-web-route
+
+    Route::get('sliders', [App\Http\Controllers\SliderController::class, 'index'])->name('sliders.index');
+    Route::get('sliders/create', [App\Http\Controllers\SliderController::class, 'create'])->name('sliders.create');
+    Route::post('sliders', [App\Http\Controllers\SliderController::class, 'store'])->name('sliders.store');
+    Route::get('sliders/{slider}', [\App\Http\Controllers\SliderController::class, 'show'])->name('sliders.show');
+    Route::get('sliders/{sliders}/edit', [\App\Http\Controllers\SliderController::class, 'edit'])->name('sliders.edit');
+    Route::put('sliders/{sliders}', [\App\Http\Controllers\SliderController::class, 'update'])->name('sliders.update');
+    Route::delete('sliders/{slider}', [\App\Http\Controllers\SliderController::class, 'destroy'])->name('sliders.destroy');
 });

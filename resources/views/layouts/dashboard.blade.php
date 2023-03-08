@@ -115,7 +115,7 @@
                                 <span>Уредување на веб страна</span>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link d-flex align-items-center text-truncate ">
+                                <a href="{{route('sliders.index')}}" class="nav-link d-flex align-items-center text-truncate ">
                               <span class="sidebar-icon">
                                 <i class="fs-2 text-primary d-block mb-2 bi bi-card-image"></i>
                               </span>
