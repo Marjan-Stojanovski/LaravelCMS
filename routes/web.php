@@ -60,4 +60,24 @@ Route::middleware(['web','auth'])->prefix('dashboard')->group(function() {
     Route::post('settings', [\App\Http\Controllers\SettingsControler::class, 'store'])->name('settings.store');
     Route::get('settings/{settings}/edit', [\App\Http\Controllers\SettingsControler::class, 'edit'])->name('settings.edit');
     Route::put('settings/{settings}', [\App\Http\Controllers\SettingsControler::class, 'update'])->name('settings.update');
+
+    //Referents-web-route
+
+    Route::get('referents', [App\Http\Controllers\ReferentsController::class, 'index'])->name('referents.index');
+    Route::get('referents/create', [App\Http\Controllers\ReferentsController::class, 'create'])->name('referents.create');
+    Route::post('referents', [App\Http\Controllers\ReferentsController::class, 'store'])->name('referents.store');
+    Route::get('referents/{referent}', [\App\Http\Controllers\ReferentsController::class, 'show'])->name('referents.show');
+    Route::get('referents/{referents}/edit', [\App\Http\Controllers\ReferentsController::class, 'edit'])->name('referents.edit');
+    Route::put('referents/{referents}', [\App\Http\Controllers\ReferentsController::class, 'update'])->name('referents.update');
+    Route::delete('referents/{referent}', [\App\Http\Controllers\ReferentsController::class, 'destroy'])->name('referents.destroy');
+
+    //Uslugi-web-route
+
+    Route::get('services', [App\Http\Controllers\ServicesController::class, 'index'])->name('services.index');
+    Route::get('services/create', [App\Http\Controllers\ServicesController::class, 'create'])->name('services.create');
+    Route::post('services', [App\Http\Controllers\ServicesController::class, 'store'])->name('services.store');
+    Route::get('services/{service}', [\App\Http\Controllers\ServicesController::class, 'show'])->name('services.show');
+    Route::get('services/{services}/edit', [\App\Http\Controllers\ServicesController::class, 'edit'])->name('services.edit');
+    Route::put('services/{services}', [\App\Http\Controllers\ServicesController::class, 'update'])->name('services.update');
+    Route::delete('services/{service}', [\App\Http\Controllers\ServicesController::class, 'destroy'])->name('services.destroy');
 });

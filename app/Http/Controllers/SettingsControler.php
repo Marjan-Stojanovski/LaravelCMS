@@ -100,7 +100,7 @@ class SettingsControler extends Controller
             'user_id' => $user_id,
         ]);
 
-        $settings = Settings::all();
+        $settings = Settings::first();
         $data = ['settings' => $settings];
 
         return view('dashboard.settings.index')->with($data);

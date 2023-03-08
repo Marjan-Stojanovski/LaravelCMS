@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('mainurl');
             $table->string('email');
-            $table->string('description');
+            $table->longText('description');
             $table->string('image');
             $table->string('link');
             $table->string('address');
