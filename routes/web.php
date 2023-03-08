@@ -80,4 +80,14 @@ Route::middleware(['web','auth'])->prefix('dashboard')->group(function() {
     Route::get('services/{services}/edit', [\App\Http\Controllers\ServicesController::class, 'edit'])->name('services.edit');
     Route::put('services/{services}', [\App\Http\Controllers\ServicesController::class, 'update'])->name('services.update');
     Route::delete('services/{service}', [\App\Http\Controllers\ServicesController::class, 'destroy'])->name('services.destroy');
+
+    //StaticPages-web-route
+
+    Route::get('stats', [App\Http\Controllers\StaticPagesController::class, 'index'])->name('stats.index');
+    Route::get('stats/create', [App\Http\Controllers\StaticPagesController::class, 'create'])->name('stats.create');
+    Route::post('stats', [App\Http\Controllers\StaticPagesController::class, 'store'])->name('stats.store');
+    Route::get('stats/{stat}', [\App\Http\Controllers\StaticPagesController::class, 'show'])->name('stats.show');
+    Route::get('stats/{stats}/edit', [\App\Http\Controllers\StaticPagesController::class, 'edit'])->name('stats.edit');
+    Route::put('stats/{stats}', [\App\Http\Controllers\StaticPagesController::class, 'update'])->name('stats.update');
+    Route::delete('stats/{stat}', [\App\Http\Controllers\StaticPagesController::class, 'destroy'])->name('stats.destroy');
 });
