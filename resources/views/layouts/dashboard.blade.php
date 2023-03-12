@@ -102,7 +102,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('settings.index')}}" class="nav-link d-flex align-items-center text-truncate ">
+                                <a href="{{route('settings.index')}}"
+                                   class="nav-link d-flex align-items-center text-truncate ">
                               <span class="sidebar-icon">
                                 <i class="fs-2 text-primary d-block mb-2 bi bi-gear"></i>
                               </span>
@@ -115,7 +116,8 @@
                                 <span>Уредување на веб страна</span>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('sliders.index')}}" class="nav-link d-flex align-items-center text-truncate ">
+                                <a href="{{route('sliders.index')}}"
+                                   class="nav-link d-flex align-items-center text-truncate ">
                               <span class="sidebar-icon">
                                 <i class="fs-2 text-primary d-block mb-2 bi bi-card-image"></i>
                               </span>
@@ -292,12 +294,19 @@
                                     <span class="flex-grow-1">Tasks</span>
                                 </a>
                                 <hr class="my-2">
-                                <a href="page-auth-signin.html" class="dropdown-item d-flex align-items-center">
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                                   class="dropdown-item d-flex align-items-center">
                       <span
                           class="material-symbols-rounded align-middle me-2 size-30 fs-5 d-flex align-items-center justify-content-center bg-warning text-white rounded-2">
                       logout
                       </span>
-                                    <span class="flex-grow-1">Logout</span>
+                                    <span class="flex-grow-1">{{ __('Logout') }}</span>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
                                 </a>
                             </div>
                         </div>

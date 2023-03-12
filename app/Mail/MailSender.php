@@ -18,9 +18,11 @@ class MailSender extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    protected $msg;
+    public function __construct($msg)
     {
-        //
+        $this->msg = $msg;
     }
 
     /**
@@ -43,7 +45,10 @@ class MailSender extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail.message',
+            with: [
+                'msg' => $this->msg
+            ]
         );
     }
 

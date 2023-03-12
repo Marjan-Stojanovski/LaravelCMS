@@ -100,4 +100,6 @@ Route::middleware(['web','auth'])->prefix('dashboard')->group(function() {
     Route::get('sliders/{sliders}/edit', [\App\Http\Controllers\SliderController::class, 'edit'])->name('sliders.edit');
     Route::put('sliders/{sliders}', [\App\Http\Controllers\SliderController::class, 'update'])->name('sliders.update');
     Route::delete('sliders/{slider}', [\App\Http\Controllers\SliderController::class, 'destroy'])->name('sliders.destroy');
+
+    Route::get('mail', [\App\Http\Controllers\UserController::class, 'mail'])->name('send.mail');
 });

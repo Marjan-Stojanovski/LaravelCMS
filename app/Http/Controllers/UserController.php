@@ -9,6 +9,8 @@ use App\Models\User;
 use Illuminate\Validation;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\Routing\Matcher\ExpressionLanguageProvider;
+use App\Mail\MailSender;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -116,6 +118,12 @@ class UserController extends Controller
         $user = User::FindorFail($id);
         $user->delete();
         return redirect()->route('users.index');
+    }
+
+    public function mail()
+    {
+        $msg = "Zdravo";
+        Mail::to('stojanovskim@yahoo.com')->send(new MailSender($msg));
     }
 
 
